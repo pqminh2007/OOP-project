@@ -1,0 +1,3 @@
+C:\Qt_new\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\HotelManagementSystem.dir/objects.a
+C:\Qt_new\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\HotelManagementSystem.dir/objects.a @CMakeFiles\HotelManagementSystem.dir\objects1.rsp
+C:\Qt_new\Tools\mingw1310_64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\HotelManagementSystem.dir/objects.a -Wl,--no-whole-archive -o HotelManagementSystem.exe -Wl,--out-implib,libHotelManagementSystem.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\HotelManagementSystem.dir\linkLibs.rsp
