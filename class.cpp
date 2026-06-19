@@ -1,3 +1,6 @@
+/* ban đầu code gốc ở đây. do chưa hiểu mấy cái override, với tình trừu tượng (absstraction) nên code được nhiêu đây. 
+các file .cpp vs .h được dùng ai để cắt từ file này ra*/
+
 #include <iostream>
 using namespace std;
 class Date {
