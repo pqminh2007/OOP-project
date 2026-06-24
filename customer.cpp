@@ -5,26 +5,40 @@ Customer::Customer() : Person() {
     customerType = "Normal";
 }
 
-Customer::Customer(string cccd, string phone, string name, Date dob, string id, string type) 
-    : Person(cccd, phone, name, dob) {
+// Constructor đầy đủ tham số (Đồng bộ thứ tự với Person: name, phone, cccd, email, dob)
+Customer::Customer(string hoten, string phone, string cccd, string email, Date dob, string id, string type) 
+    : Person(hoten, phone, cccd, email, dob) {
     this->customerID = id;
     this->customerType = type;
 }
 
-/*// Ghi đè (Override) hàm hiển thị thông tin riêng của Khách hàng
+// Ghi đè (Override) hàm hiển thị thông tin riêng của Khách hàng
 void Customer::displayInfo() const {
-    // Đoạn code này đang bị comment lại
+    cout << "[KHACH HANG] ID: " << customerID << " | Ten: " << hoten 
+         << " | SDT: " << phoneNumber << " | Loai: " << customerType << endl;
 }
 
-void Customer::input() {
-    // Đoạn code này đang bị comment lại
-}*/
-
-// Getter cho thành viên số 5 tính hóa đơn
-string Customer::getCustomerType() const { 
-    return customerType; 
+// Getter trả về tỷ lệ giảm giá dựa trên phân loại khách
+double Customer::getDiscountRate() const {
+    if (customerType == "VIP") 
+        return 0.15; // Giảm 15%
+    else if (customerType == "Corporate") 
+        return 0.10; // Khách đặt số lượng lớn (Công ty/Trường học) -> Giảm 10%
+    return 0.0; // Khách thường -> Giảm 0%
 }
 
-string Customer::getCustomerID() const { 
-    return customerID; 
+// Các hàm Getter/Setter cần thiết
+string Customer::getCustomerType() const { return customerType; }
+string Customer::getCustomerID() const { return customerID; }
+
+void Customer::setCustomerType(string type) { this->customerType = type; }
+
+// Hàm cập nhật thông tin khách khi Quản lý/Tiếp tân chỉnh sửa trên GUI
+void Customer::updateCustomerInfo(string name, string phone, string cccd, string email, Date dob, string type) {
+    this->hoten = name;
+    this->phoneNumber = phone;
+    this->cccd = cccd;
+    this->email = email;
+    this->dob = dob;
+    this->customerType = type;
 }

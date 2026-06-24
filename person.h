@@ -5,24 +5,24 @@
 using namespace std;
 
 class Person {
-private:
+protected:
     string cccd;
     string phoneNumber;
     string hoten; //fullname
+    string email;
     Date dob;
 
 public:
     Person();
-    Person(string cccd, string phoneNumber, string hoten, Date dob);
+    Person(string hoten, string phoneNumber, string cccd, string email, Date dob);
+    
+    // Hàm ảo thuần ảo để biến Person thành lớp trừu tượng (Abstraction)
+    virtual void displayInfo() const = 0;
 
-    void addPerson(string cccd, string phoneNumber, string hoten);
-    void updatePerson(string cccd, string phoneNumber, string hoten);
-    void deletePerson();
-    void searchPerson();
-    void ViewPerson();
-
-    // Các hàm Getter để sau này Thành viên 1 và Thành viên 5 lấy dữ liệu làm Bộ lọc/Tìm kiếm
-    string getCCCD() const;
-    string getPhoneNumber() const;
+    // Các hàm Getter
     string getHoTen() const;
+    string getPhoneNumber() const;
+    string getCCCD() const;
+    string getEmail() const;
+    Date getDob() const;
 };
